@@ -1,6 +1,6 @@
-# Cartesi Testing
+# Testing - Processing iRacing race results file in a Cartesi Maching
 
-This project contains code used to test the Descartes SDK, documented in https://cartesi.io/docs/
+This project contains code used to test the Descartes SDK, documented in https://cartesi.io/docs/, by processing a iRacing race results file in a Cartesi machine.
 
 ## Getting Started
 
@@ -29,7 +29,7 @@ docker-compose up
 
 ### Cartesi Playground
 
-Go to the parent folder and use the cartesi/playground Docker image, making sure to map the current directory:
+Clone this project and use the cartesi/playground Docker image, making sure to map the current directory:
 
 ```
 docker run -it --rm \
