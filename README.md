@@ -46,13 +46,19 @@ Pack the processresult.sh script, that does the processing of the iRacing result
 
 ```
 mkdir ext2
-cp processresult ext2
+cp processresult.sh ext2
 ```
 
 Still inside the playground, use the genext2fs tool to generate the file-system with those contents:
 
 ```
 genext2fs -b 1024 -d ext2 processresult.ext2
+```
+Use the truncate tool to pad the results.csv file to 8K for usage with the Cartesi machine:
+
+
+```
+truncate -s 8K results.csv
 ```
 
 Still within the playground, execute the following command to process the iRacing race results file in a cartesi machine:
@@ -62,7 +68,7 @@ cartesi-machine \
   --flash-drive="label:processresult,filename:processresult.ext2" \
   --flash-drive="label:input,length:1<<13,filename:results.csv" \
   --flash-drive="label:output,length:1<<12,filename:output.raw,shared" \
-  -- $'cd /mnt/processresult ; ./processresult.sh $(flashdrive input) > $(flashdrive output)'
+  -- $'cd /mnt/processresult ; dd if=$(flashdrive input) of=results.raw ; ./processresult.sh results.raw > $(flashdrive output)'
 ```
 
 The result of the processing will be stored in the output.raw file
