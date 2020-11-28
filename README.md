@@ -54,11 +54,11 @@ Still inside the playground, use the genext2fs tool to generate the file-system 
 ```
 genext2fs -b 1024 -d ext2 processresult.ext2
 ```
-Use the truncate tool to pad the results.csv file to 8K for usage with the Cartesi machine:
-
+Use the truncate tool to pad the results.csv file to 8K, and output.raw to 4K for usage with the Cartesi machine:
 
 ```
 truncate -s 8K results.csv
+truncate -s 4K output.raw
 ```
 
 Still within the playground, execute the following command to process the iRacing race results file in a cartesi machine:
