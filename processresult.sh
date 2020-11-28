@@ -1,4 +1,3 @@
-#!/bin/bash
 # Read race results csv file
 
 INPUT=$1
@@ -13,7 +12,9 @@ while read FinPos CarID Car CarClassID CarClass TeamID CustID Name StartPos CarN
 do
 	echo "Name : $Name"
 	echo "CustID : $CustID"
+	echo "TeamID : $TeamID"
 	echo "FinPos : $FinPos"
   	echo "Points : $Pts"
+	echo "Incidents : $Inc"
 done < $INPUT
 IFS=$OLDIFS
