@@ -86,5 +86,5 @@ The processing done above serves just as an example, in a real scenario we have 
   * Crypto prize for postion;
   * Crypto deduction regarding incidents/damage;
 
-The processing of these will then be used to update the season standings and also the crypto budget of each player. The season standings can be saved in a database (in a Node.js server for example), just needs available to show in the frontend. The crypto budget of each player, being more sensitive information, should be stored in the smart contract. In this smart contract there should be also a method for players to redeem their budget, or part of it, whenever they want.
+The processing of these will then be used to update the season standings and also the crypto budget of each player. The season standings and specially the crypto budget of each player should be stored in a safe way, possibly in the smart contract. In this case the result of the processing would be used to update the values in the smart contract. In this smart contract there should be also a method for players to redeem their budget, or part of it, whenever they want.
 
