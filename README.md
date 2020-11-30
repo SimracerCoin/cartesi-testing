@@ -78,13 +78,13 @@ The result of the processing will be stored in the output.raw file.
 
 The processing done above serves just as an example, in a real scenario we have to consider the following:
 
-* Each game has it's own format regarding race results and so will have it's own processing script too
+* Each game has it's own format regarding race results and so will have it's own processing script too.
 * Each private league is going to be able to assign it's own points, bonus and penalties according to the race results. Also each league will have it's own prize scheme (crypto awarded for position) and deduction system (crypto deducted for damage/incidents). So it will exist another input file, a configuration file with parameters such as:
-  * Mapping for each position points
-  * Bonus points according to league criteria (for example bonus for most laps led) 
-  * Penalty points regarding incidents
-  * Crypto prize for postion
-  * Crypto deduction regarding incidents/damage
+  * Mapping for each position points;
+  * Bonus points according to league criteria (for example bonus for most laps led);
+  * Penalty points regarding incidents;
+  * Crypto prize for postion;
+  * Crypto deduction regarding incidents/damage;
 
-The processing of a race result file will then be used to update the season standings and also the crypto budget of each player. The season standings info can be saved in any database and be available to show in the frontend. The crypto budget of each player should be stored in the smart contract. In this smart contract there should be also a method for players to redeem their budget, or part of it, whenever they want.
+The processing of these will then be used to update the season standings and also the crypto budget of each player. The season standings can be saved in a database (in a Node.js server for example), just needs available to show in the frontend. The crypto budget of each player, being more sensitive information, should be stored in the smart contract. In this smart contract there should be also a method for players to redeem their budget, or part of it, whenever they want.
 
